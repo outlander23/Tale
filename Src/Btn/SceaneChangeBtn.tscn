@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Src/Btn/SceaneChangeBtn.gd" type="Script" id=1]
+
+[node name="SceaneChangeBtn" type="Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -44.0
+margin_top = -10.0
+margin_right = 44.0
+margin_bottom = 10.0
+text = "change"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="." to="." method="_on_SceaneChangeBtn_button_up"]

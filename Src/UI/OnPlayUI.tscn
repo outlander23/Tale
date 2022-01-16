@@ -1,0 +1,125 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Fonts/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Src/UI/OnPlayUI.gd" type="Script" id=2]
+[ext_resource path="res://Src/Btn/quit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Src/Btn/SceaneChangeBtn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Src/Btn/replay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Btn/ezgif.com-gif-maker.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Btn/ezgif.com-gif-maker(3).png" type="Texture" id=7]
+
+[node name="OnPlayUI" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="."]
+modulate = Color( 0.443137, 0.0156863, 0.411765, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -257.726
+margin_top = 70.6353
+margin_right = -117.726
+margin_bottom = 101.635
+text = "BEST SCORE: %S"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score2" type="Label" parent="."]
+modulate = Color( 0.443137, 0.0156863, 0.411765, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -955.67
+margin_top = 72.3171
+margin_right = -773.67
+margin_bottom = 103.317
+text = "Best SCORE: %s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pused" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.772549 )
+self_modulate = Color( 0.921569, 0.870588, 0.917647, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+color = Color( 0.933333, 0.886275, 0.886275, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pused" type="TouchScreenButton" parent="pused"]
+scale = Vector2( 0.279945, 0.279945 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 7 )
+action = "puse"
+
+[node name="labelOnPlay" type="Label" parent="pused"]
+self_modulate = Color( 0.996078, 0.0431373, 0.0431373, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -159.907
+margin_right = 112.0
+margin_bottom = -115.907
+text = "Pused"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnContiainer" type="VBoxContainer" parent="pused"]
+modulate = Color( 0.980392, 0.027451, 0.027451, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -72.5
+margin_top = -80.0
+margin_right = 72.5
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="replay" parent="pused/btnContiainer" instance=ExtResource( 5 )]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Replay"
+
+[node name="home" parent="pused/btnContiainer" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 82.0
+margin_right = 145.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "home"
+nextSeen = "res://Src/UI/MainUI.tscn"
+
+[node name="quit" parent="pused/btnContiainer" instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 123.0
+margin_right = 145.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

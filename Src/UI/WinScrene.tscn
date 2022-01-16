@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Src/Btn/quit.gd" type="Script" id=2]
+[ext_resource path="res://Src/Btn/SceaneChangeBtn.gd" type="Script" id=3]
+[ext_resource path="res://Src/Btn/quit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Src/Btn/SceaneChangeBtn.tscn" type="PackedScene" id=7]
+
+[node name="WinScrene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.145098, 0, 0.145098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -220.0
+margin_right = 107.0
+margin_bottom = -155.0
+text = "Congrats You Win
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnContiainer" type="VBoxContainer" parent="ColorRect"]
+modulate = Color( 0.980392, 0.027451, 0.027451, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -72.5
+margin_top = -80.0
+margin_right = 72.5
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="home" type="Button" parent="ColorRect/btnContiainer" instance=ExtResource( 7 )]
+margin_right = 145.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "home"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+nextSeen = "res://Src/UI/MainUI.tscn"
+
+[node name="quit" type="Button" parent="ColorRect/btnContiainer" instance=ExtResource( 5 )]
+margin_top = 82.0
+margin_right = 145.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Quit"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="ColorRect/btnContiainer/home" to="ColorRect/btnContiainer/home" method="_on_SceaneChangeBtn_button_up"]
+[connection signal="button_up" from="ColorRect/btnContiainer/quit" to="ColorRect/btnContiainer/quit" method="_on_quit_button_up"]

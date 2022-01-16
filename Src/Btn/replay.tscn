@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Src/Btn/replay.gd" type="Script" id=1]
+
+[node name="replay" type="Button"]
+margin_right = 12.0
+margin_bottom = 37.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="." to="." method="_on_replay_button_up"]
