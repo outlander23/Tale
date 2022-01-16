@@ -12,6 +12,7 @@ Version : 1.1 <br/>
 Made by : S.M.Miloy <br/>
 Made with : Godot <br/>
 Has Level : 3 <br/>
+  Download Link : <a href="https://github.com/smmiloy23/aTale">github</a>
 </div>
 
 # Some screen shot of the game
